@@ -7,9 +7,10 @@ Marketing site for Foothills Forest School, a nature-based preschool in Maryvill
 ---
 
 ## Tech Stack
-- Plain HTML5, CSS3, vanilla JavaScript — no frameworks or build tools
-- Served by `nginx:alpine` on Fly.io (personal org, iad region)
+- F# Falco 5.1 / .NET 8 serving static files from `wwwroot/`
+- Hosted on Fly.io (personal org, iad region)
 - Fonts: Google Fonts (Raleway + Open Sans)
+- Falco chosen over pure nginx so the email signup form can be wired to a real backend without a platform migration
 
 ## Structure
 ```
@@ -21,7 +22,8 @@ wwwroot/          all public assets served by nginx
   images/         photos
   robots.txt      allows all, points at sitemap
   sitemap.xml     10 URLs, lastmod 2026-04-12
-Dockerfile        4-line nginx:alpine copy
+Dockerfile        multi-stage .NET 8 build
+src/ProductSite/  F# Falco app (Program.fs, Configuration.fs, Handlers.fs)
 fly.toml          Fly.io app config
 ```
 

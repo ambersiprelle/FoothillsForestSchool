@@ -8,7 +8,7 @@ Nature-based preschool and forest school in Maryville, TN. Static marketing site
 
 ## Key Details
 - **Branch:** main
-- **Stack:** Pure static HTML/CSS/JS, served by `nginx:alpine`
+- **Stack:** F# Falco 5.1 / .NET 8, serving static files from `wwwroot/` (signup/contact form backend planned)
 - **Deploy:** `fly deploy` (direct, no CI)
 - **Fly org:** personal
 - **Region:** iad
