@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foothills-forest-school.fly.dev/sitemap.xml
