@@ -27,7 +27,7 @@ Nature-based preschool and forest school in Maryville, TN. F# Falco site with in
 |-------|------|---------|
 | `GET /` (and other *.html) | public | Static marketing pages |
 | `POST /signup` | public | Email capture → SQLite + notify katie@ via Resend |
-| `GET /admin` | basic auth | Contacts dashboard + broadcast form |
+| `GET /admin` | basic auth | Contacts dashboard + broadcast form. Filters: text search, multi-select tag (Cmd/Ctrl-click for OR), source. |
 | `GET /admin/contacts.json` | basic auth | Contacts as JSON |
 | `POST /admin/broadcast` | basic auth | Send Resend broadcast to all / by tag |
 | `GET /health` | public | Health check |

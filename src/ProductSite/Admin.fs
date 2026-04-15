@@ -121,7 +121,7 @@ let private renderDashboard () =
 
 <div class="filters">
   <label>Search: <input type="text" id="q" placeholder="email, name, phone, notes, tag…" /></label>
-  <label>Tag: <select id="tagFilter"><option value="">— any —</option>%s</select></label>
+  <label>Tag: <select id="tagFilter" multiple size="6">%s</select></label>
   <label>Source: <select id="sourceFilter"><option value="">— any —</option>%s</select></label>
   <button type="button" id="clearFilters">Clear</button>
   <span id="count"></span>
@@ -144,7 +144,7 @@ let private renderDashboard () =
   var rows=document.querySelectorAll('#contactsTable tbody tr');
   function apply(){
     var needle=(q.value||'').toLowerCase().trim();
-    var tag=tagF.value;
+    var tags=Array.from(tagF.selectedOptions).map(function(o){return o.value;}).filter(Boolean);
     var src=srcF.value;
     var shown=0;
     rows.forEach(function(r){
@@ -153,7 +153,7 @@ let private renderDashboard () =
       var s=r.getAttribute('data-source')||'';
       var ok=true;
       if(needle && h.indexOf(needle)===-1) ok=false;
-      if(tag && ts.indexOf(','+tag+',')===-1) ok=false;
+      if(tags.length && !tags.some(function(t){return ts.indexOf(','+t+',')!==-1;})) ok=false;
       if(src && s!==src) ok=false;
       if(ok){r.classList.remove('hidden');shown++;} else {r.classList.add('hidden');}
     });
@@ -162,7 +162,7 @@ let private renderDashboard () =
   q.addEventListener('input',apply);
   tagF.addEventListener('change',apply);
   srcF.addEventListener('change',apply);
-  clear.addEventListener('click',function(){q.value='';tagF.value='';srcF.value='';apply();});
+  clear.addEventListener('click',function(){q.value='';Array.from(tagF.options).forEach(function(o){o.selected=false;});srcF.value='';apply();});
   apply();
 })();
 </script>
