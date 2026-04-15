@@ -107,11 +107,28 @@
     <div class="container" style="text-align:center;max-width:560px;">
       <p class="section-label">Stay Connected</p>
       <h2 class="section-title">Join Our Mailing List</h2>
-      <form style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;" onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:var(--green-dark);font-weight:700;\'>Thanks! We\'ll be in touch.</p>'">
-        <input type="email" placeholder="Email" required
+      <form id="newsletter-form" style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1rem;">
+        <input name="email" type="email" placeholder="Email" required
           style="flex:1;min-width:220px;padding:0.75rem 1.25rem;border:2px solid #ddd;border-radius:50px;font-family:inherit;font-size:0.95rem;outline:none;" />
+        <input type="hidden" name="source" value="homepage-newsletter" />
         <button type="submit" class="btn btn-primary">Sign up</button>
       </form>
+      <script>
+        (function() {
+          var form = document.getElementById('newsletter-form');
+          if (!form) return;
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var data = new FormData(form);
+            fetch('/signup', { method: 'POST', body: data })
+              .then(function(r) { return r.text(); })
+              .then(function(html) { form.outerHTML = html; })
+              .catch(function() {
+                form.outerHTML = '<p style="color:#b00;font-weight:700;">Something went wrong. Please try again.</p>';
+              });
+          });
+        })();
+      </script>
     </div>
   </section>
 
