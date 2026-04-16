@@ -75,11 +75,13 @@ Full sweep complete:
 4. **Parent Handbook PDF** — link from Enrollment page.
 
 ### Medium Priority
-5. **Google Analytics** (GA4 snippet)
-6. **Favicon**
-7. **Wire hiring.html to `/signup`** — currently client-side only; removed from nav but page still exists.
+5. **Import summer camp enrollees into CRM** — CSV export from school SaaS has 10 students; 3 Active (paid): Asher Rogers, Owen Ramsey, Sara Rolen. Need to import parent contacts and tag with `summer-camp-2026-paid`.
+6. **Active/inactive flag on admin** — user-controllable toggle per contact row. DB column `is_active`, per-row checkbox that POSTs, hide inactive by default with a "show inactive" filter toggle.
+7. **Google Analytics** (GA4 snippet)
+8. **Favicon**
+9. **Wire hiring.html to `/signup`** — currently client-side only; removed from nav but page still exists.
 
 ### Nice to Have
-8. **Enrollment status banner** — dismissable, easy to update
-9. **Testimonials section**
-10. **Interactive camp calendar**
+10. **Enrollment status banner** — dismissable, easy to update
+11. **Testimonials section**
+12. **Interactive camp calendar**
