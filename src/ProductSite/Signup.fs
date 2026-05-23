@@ -28,8 +28,18 @@ let handle (notifyEmail: string) : HttpHandler =
             let source = if sourceIn = "" then "website" else sourceIn
             let tag = if sourceIn = "" then "newsletter" else sourceIn
             let honeypot = (getField form "website").Trim()
+            let turnstileToken = (getField form "cf-turnstile-response").Trim()
+            let clientIp =
+                match ctx.Request.Headers.TryGetValue("X-Forwarded-For") with
+                | true, v when v.Count > 0 -> (string v.[0]).Split(',').[0].Trim()
+                | _ -> ctx.Connection.RemoteIpAddress |> Option.ofObj |> Option.map string |> Option.defaultValue "unknown"
+            let! turnstileOk = TurnstileVerifier.verify turnstileToken clientIp
 
-            if honeypot <> "" then
+            if not turnstileOk then
+                printfn "[Signup] turnstile rejected: ip=%s email=%s" clientIp email
+                ctx.Response.StatusCode <- 403
+                do! ctx.Response.WriteAsync("Bot check failed. Please refresh and try again.")
+            elif honeypot <> "" then
                 printfn "[Signup] dropping bot submission (honeypot tripped): email=%s" email
                 ctx.Response.ContentType <- "text/html; charset=utf-8"
                 do! ctx.Response.WriteAsync(

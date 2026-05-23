@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -113,8 +114,17 @@
         <input type="hidden" name="source" value="homepage-newsletter" />
         <input type="text" name="website" tabindex="-1" autocomplete="off"
           style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;" aria-hidden="true" />
+        <div class="cf-turnstile" data-sitekey="" id="turnstile-widget" data-theme="auto" style="flex-basis:100%;display:flex;justify-content:center;"></div>
         <button type="submit" class="btn btn-primary">Sign up</button>
       </form>
+      <script>
+        fetch('/api/turnstile-config').then(function(r){return r.json();}).then(function(cfg){
+          if (cfg.siteKey) {
+            var widget = document.getElementById('turnstile-widget');
+            if (widget) widget.setAttribute('data-sitekey', cfg.siteKey);
+          }
+        }).catch(function(){});
+      </script>
       <script>
         (function() {
           var form = document.getElementById('newsletter-form');

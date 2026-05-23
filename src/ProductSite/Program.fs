@@ -28,6 +28,7 @@ let main args =
     let endpoints =
         [
             get "/health" healthCheck
+            get "/api/turnstile-config" handleTurnstileConfig
             post "/signup" (Signup.handle config.Resend.NotifyEmail)
         ] @ Admin.routes config.Admin
 
