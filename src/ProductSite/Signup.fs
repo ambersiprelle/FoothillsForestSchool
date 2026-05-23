@@ -27,8 +27,14 @@ let handle (notifyEmail: string) : HttpHandler =
             let sourceIn = (getField form "source").Trim()
             let source = if sourceIn = "" then "website" else sourceIn
             let tag = if sourceIn = "" then "newsletter" else sourceIn
+            let honeypot = (getField form "website").Trim()
 
-            if not (isValidEmail email) then
+            if honeypot <> "" then
+                printfn "[Signup] dropping bot submission (honeypot tripped): email=%s" email
+                ctx.Response.ContentType <- "text/html; charset=utf-8"
+                do! ctx.Response.WriteAsync(
+                    """<p style="color:#3f6e42;font-weight:700;text-align:center;">Thanks! We'll be in touch.</p>""")
+            elif not (isValidEmail email) then
                 ctx.Response.StatusCode <- 400
                 do! ctx.Response.WriteAsync("A valid email is required.")
             else
