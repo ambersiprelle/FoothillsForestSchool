@@ -272,6 +272,24 @@ section {
   background: linear-gradient(135deg, rgba(30,50,20,0.7) 0%, rgba(74,103,65,0.4) 100%);
 }
 
+.hero-logo {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 210px;
+  height: auto;
+  z-index: 3;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.3));
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 130px;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
