@@ -17,7 +17,7 @@ Marketing site for Foothills Forest School, a nature-based preschool in Maryvill
 ```
 wwwroot/          public assets served by Falco
   index.html      homepage
-  *.html          content pages (philosophy, classes, summer camp, enrollment, etc.)
+  *.html          content pages (philosophy, classes, gear, enrollment, etc.)
   css/            stylesheet
   js/             nav toggle + active-page highlight
   images/         photos
@@ -45,13 +45,13 @@ fly deploy
 
 No CI — manual deploys only.
 
-## Pages (10 total)
+## Pages (9 total)
 | File | Content |
 |------|---------|
 | `index.html` | Homepage — hero, philosophy intro, programs overview, email signup |
 | `nature-based-education.html` | 3-pillar educational philosophy |
 | `classes.html` | Forest Preschool, Forest K/1, Homeschool Enrichment with pricing |
-| `summer-camp.html` | 7 weekly themes, age groups, pricing |
+| `gear.html` | Base gear guidelines + seasonal gear lists |
 | `enrollment.html` | 6-step process, tuition table, FAQ |
 | `preview-days.html` | Spring 2026 preview dates |
 | `family-fridays.html` | Spring 2026 sessions, pricing |
