@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- summer-camp.html is deliberately excluded: unpublished until Summer 2027. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://foothills-forest-school.fly.dev/</loc><lastmod>2026-07-24</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/enrollment.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/classes.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/nature-based-education.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/meet-our-staff.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/gear.html</loc><lastmod>2026-07-24</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/preview-days.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/family-fridays.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/ways-to-support.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://foothills-forest-school.fly.dev/hiring.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://foothillsforestschool.com/</loc><lastmod>2026-07-24</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://foothillsforestschool.com/enrollment.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://foothillsforestschool.com/classes.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://foothillsforestschool.com/nature-based-education.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://foothillsforestschool.com/meet-our-staff.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://foothillsforestschool.com/gear.html</loc><lastmod>2026-07-24</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://foothillsforestschool.com/preview-days.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://foothillsforestschool.com/family-fridays.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://foothillsforestschool.com/ways-to-support.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://foothillsforestschool.com/hiring.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
