@@ -288,6 +288,12 @@
     }
     .ffs-popup-cta-text { color: var(--text-dark); font-weight: 600; margin-bottom: 1rem; }
     .ffs-popup-btn { display: inline-block; width: 100%; text-align: center; }
+    .ffs-popup-emailnote {
+      margin: 0.85rem 0 0; text-align: center;
+      font-size: 0.88rem; color: var(--text-mid); line-height: 1.5;
+      word-break: break-word;
+    }
+    .ffs-popup-emailnote a { color: var(--green-dark); font-weight: 600; }
     @media (max-width: 480px) {
       .ffs-popup { padding: 2rem 1.4rem 1.6rem; }
       .ffs-popup h2 { font-size: 1.3rem; }
@@ -334,7 +340,10 @@
               '<li>&#128218; TN-certified lead teacher, low ratio</li>' +
             '</ul>' +
             '<p class="ffs-popup-cta-text">&#128153; We&rsquo;d love to talk to you if you&rsquo;re interested!</p>' +
-            '<a class="btn btn-primary ffs-popup-btn" href="mailto:katie@foothillsforestschool.com?subject=Interested%20in%20enrolling%20at%20Foothills%20Forest%20School">Email Katie, our Director</a>'
+            '<a class="btn btn-primary ffs-popup-btn" href="enrollment.html">See Enrollment &amp; Apply</a>' +
+            '<p class="ffs-popup-emailnote">Or email Katie, our Director: ' +
+              '<a href="mailto:katie@foothillsforestschool.com?subject=Interested%20in%20enrolling%20at%20Foothills%20Forest%20School">katie@foothillsforestschool.com</a>' +
+            '</p>'
         }
         // Template for a dated event — copy, set `through` to the event date,
         // and it will start showing immediately and retire itself afterward:
