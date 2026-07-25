@@ -10,7 +10,7 @@ Nature-based preschool and forest school in Maryville, TN. F# Falco site with in
 - F# / .NET 8 / Falco 5.1
 - Microsoft.Data.Sqlite (contacts DB on Fly volume at `/data/ffs.db`)
 - Resend (transactional + broadcast email, domain `foothillsforestschool.com` verified)
-- Fly.io app `foothills-forest-school`, org personal, region iad
+- Fly.io app `foothills-forest-school`, region iad — owned by the **`amber@chiaha.com`** Fly account (personal org *of that account*)
 - Fly volume `ffs_data` mounted at `/data`
 
 ## Compilation Order
@@ -52,6 +52,19 @@ fly volumes create ffs_data --region iad --size 1 -a foothills-forest-school
 ```bash
 fly deploy -a foothills-forest-school
 ```
+
+Deploy auth: must be logged in as the **`amber@chiaha.com`** Fly account. There are
+multiple Fly accounts on this machine (`ambersiprelle@gmail.com`,
+`amber@renegadeyoga.com`) and neither can see this app — `fly.toml` has no `org` key,
+so Fly resolves the org from whoever is authenticated.
+
+Verify with `fly apps list` and confirm `foothills-forest-school` is in the output.
+Do **not** trust `fly auth whoami` — it prints a cached identity from
+`~/.fly/config.yml` even when the token behind it is dead or scoped to another account.
+Symptom of the wrong account: `Could not find App "foothills-forest-school"`.
+Symptom of a dead token: `Error: unauthorized`. Fix either with `fly auth logout &&
+fly auth login` **in a real terminal** — the login needs a TTY and cannot run from
+inside Claude Code.
 
 ## Signup form pattern
 Forms POST to `/signup` with `email` (required), optional `name`, `phone`, `message`, `source`. The `source` field becomes a tag. Homepage newsletter form posts `source=homepage-newsletter`.
