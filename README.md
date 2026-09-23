@@ -2,7 +2,7 @@
 
 Marketing site for Foothills Forest School, a nature-based preschool in Maryville, TN. Recreated from [FoothillsForestSchool.com](https://foothillsforestschool.com) and hosted on Fly.io.
 
-**Live site:** https://foothills-forest-school.fly.dev/
+**Live site:** https://foothillsforestschool.com/
 
 ---
 
@@ -45,7 +45,7 @@ fly deploy
 
 No CI — manual deploys only.
 
-## Pages (9 total)
+## Pages (11 total)
 | File | Content |
 |------|---------|
 | `index.html` | Homepage — hero, philosophy intro, programs overview, email signup |
@@ -58,6 +58,7 @@ No CI — manual deploys only.
 | `ways-to-support.html` | T-shirts, Venmo, Amazon Wishlist, building fund |
 | `meet-our-staff.html` | Staff profiles and credentials |
 | `hiring.html` | Open roles and how to apply |
+| `faq.html` | Parent FAQ with FAQPage schema |
 
 ## SEO
 Full sweep complete:

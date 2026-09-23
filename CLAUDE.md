@@ -3,7 +3,7 @@
 ## Overview
 Nature-based preschool and forest school in Maryville, TN. F# Falco site with integrated lightweight CRM (SQLite + Resend).
 
-**Live:** https://foothills-forest-school.fly.dev/
+**Live:** https://foothillsforestschool.com/ (Fly app foothills-forest-school)
 **Repo:** ambersiprelle/FoothillsForestSchool
 
 ## Stack
@@ -70,5 +70,6 @@ inside Claude Code.
 Forms POST to `/signup` with `email` (required), optional `name`, `phone`, `message`, `source`. The `source` field becomes a tag. Homepage newsletter form posts `source=homepage-newsletter`.
 
 ## Notes
-- Custom domain `foothillsforestschool.com` not yet wired to Fly
+- Custom domain `foothillsforestschool.com` is live on Fly. Extensionless paths (`/classes`) 301 to the `.html` page (Program.fs middleware) because Google indexed them from the old GoDaddy site.
+- `faq.html` carries FAQPage JSON-LD; keep its answers in step with classes.html and enrollment.html when tuition, ages, or schedules change.
 - Hiring form (`hiring.html`) still client-side only — not yet wired to `/signup`
